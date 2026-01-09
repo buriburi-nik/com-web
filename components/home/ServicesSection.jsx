@@ -121,7 +121,7 @@ export default function ServicesSection() {
                     <span className="text-[#D4AF37] font-medium tracking-wider uppercase text-sm mb-3 block">
                         Our Expertise
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">
+                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                         Premium <span className="italic text-[#D4AF37]">Steel</span> Solutions
                     </h2>
                     <p className="max-w-2xl mx-auto text-gray-600 font-light">
@@ -156,7 +156,7 @@ export default function ServicesSection() {
 
                             {/* Front Content */}
                             <div className="absolute bottom-0 p-6 text-white transition-all duration-500 group-hover:translate-y-[-120px]">
-                                <span className="text-3xl font-serif text-[#D4AF37]">
+                                <span className="text-3xl font-bold text-[#D4AF37]">
                                     {service.id}
                                 </span>
                                 <h3 className="text-xl font-bold mt-1">

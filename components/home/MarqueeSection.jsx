@@ -32,7 +32,7 @@ export default function MarqueeSection() {
                                 Interior Design
                             </span>
                             <span className="w-4 h-4 rounded-full bg-white/50" />
-                            <span className="text-4xl md:text-6xl font-light uppercase tracking-wider font-serif">
+                            <span className="text-4xl md:text-6xl font-light uppercase tracking-wider">
                                 Architecture
                             </span>
                             <span className="w-4 h-4 rounded-full bg-white/50" />
@@ -40,7 +40,7 @@ export default function MarqueeSection() {
                                 Luxury Living
                             </span>
                             <span className="w-4 h-4 rounded-full bg-white/50" />
-                            <span className="text-4xl md:text-6xl font-light uppercase tracking-wider font-serif">
+                            <span className="text-4xl md:text-6xl font-light uppercase tracking-wider">
                                 Modern Spaces
                             </span>
                             <span className="w-4 h-4 rounded-full bg-white/50" />

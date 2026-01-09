@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Upload } from 'lucide-react';
 import Button from '../../../components/ui/Button';
 import InspirationCard from '../../../components/cards/InspirationCard';
@@ -42,14 +43,27 @@ export default function ProductsPage() {
     return (
         <main className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="relative py-20 bg-gradient-to-r from-[#F4E4C1] to-white pt-32">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                        Our <span className="text-[#D4AF37]">Portfolio</span>
-                    </h1>
-                    <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
-                        A curated collection of our finest work, where architectural vision meets precision craftsmanship.
-                    </p>
+            <section className="relative py-20 bg-[#F3EAD7] overflow-hidden">
+                {/* Background Pattern */}
+                <div className="absolute top-0 left-0 w-64 h-64 bg-white/40 rounded-full blur-[80px] -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/30 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <span className="text-[#D4AF37] font-medium tracking-wider uppercase text-sm mb-3 block">
+                            Our Portfolio
+                        </span>
+                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                            Crafted <span className="text-[#D4AF37] italic">Masterpieces</span>
+                        </h1>
+                        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light">
+                            A curated collection of our finest work, where architectural vision meets precision craftsmanship.
+                        </p>
+                    </motion.div>
                 </div>
             </section>
 

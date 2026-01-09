@@ -67,13 +67,13 @@ export default function SocialProofSection() {
                         </span>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
                             Building Trust <br />
-                            <span className="font-serif italic text-[#D4AF37] font-light">Through Excellence</span>
+                            <span className="italic text-[#D4AF37] font-light">Through Excellence</span>
                         </h2>
 
                         <div className="grid grid-cols-2 gap-8 mt-12">
                             {stats.map((stat, index) => (
                                 <div key={stat.id} className="flex flex-col">
-                                    <span className="text-4xl md:text-5xl font-serif text-[#D4AF37] font-medium">
+                                    <span className="text-4xl md:text-5xl text-[#D4AF37] font-medium">
                                         {stat.value}
                                     </span>
                                     <span className="text-sm text-gray-500 uppercase tracking-widest mt-2 font-medium">

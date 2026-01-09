@@ -1,111 +1,227 @@
+"use client";
+
 import React from 'react';
-import { Home, Paintbrush, Sofa, Lightbulb, Ruler, ShoppingBag } from 'lucide-react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
+import Button from '../../../components/ui/Button';
 
 const services = [
     {
-        id: 1,
-        icon: Home,
-        title: 'Residential Design',
-        description: 'Transform your home into a personalized sanctuary with our expert residential design services.',
-        features: ['Space Planning', 'Color Consultation', 'Furniture Selection', 'Custom Solutions']
+        id: "01",
+        title: "Bespoke Railings & Staircases",
+        description:
+            "Custom-crafted stainless steel railings blending safety with architectural elegance.",
+        image: "/HomePage/decor.jpg",
+        tags: ["Residential", "Commercial"],
+        details: [
+            "Laser-cut precision railings",
+            "Indoor & outdoor staircase systems",
+            "Mirror, matte & brushed finishes",
+            "Safety-compliant installations",
+        ],
     },
     {
-        id: 2,
-        icon: Paintbrush,
-        title: 'Interior Styling',
-        description: 'Elevate your space with curated styling that reflects your unique personality and lifestyle.',
-        features: ['Decor Selection', 'Art Curation', 'Textile Coordination', 'Finishing Touches']
+        id: "02",
+        title: "Luxury Facades & Cladding",
+        description:
+            "High-performance steel cladding for striking modern exteriors and durability.",
+        image: "/HomePage/decor.jpg",
+        tags: ["Commercial", "Hotel"],
+        details: [
+            "Weather-resistant steel panels",
+            "Modern architectural facade systems",
+            "Custom perforation & textures",
+            "Low-maintenance exterior solutions",
+        ],
     },
     {
-        id: 3,
-        icon: Sofa,
-        title: 'Furniture Design',
-        description: 'Custom furniture pieces designed and crafted to perfectly fit your space and needs.',
-        features: ['Bespoke Furniture', 'Material Selection', 'Ergonomic Design', 'Quality Craftsmanship']
+        id: "03",
+        title: "Designer Furniture & Fixtures",
+        description:
+            "Statement furniture and fixtures engineered for aesthetics and long-term use.",
+        image: "/HomePage/decor.jpg",
+        tags: ["Interior", "Bespoke"],
+        details: [
+            "Custom tables, shelves & fixtures",
+            "Steel + wood luxury combinations",
+            "Handcrafted premium finishes",
+            "Tailored to space & function",
+        ],
     },
     {
-        id: 4,
-        icon: Lightbulb,
-        title: 'Lighting Design',
-        description: 'Create the perfect ambiance with strategic lighting solutions for every room.',
-        features: ['Lighting Plans', 'Fixture Selection', 'Smart Systems', 'Energy Efficiency']
+        id: "04",
+        title: "Commercial Kitchen Solutions",
+        description:
+            "Industrial-grade stainless steel solutions for professional kitchens.",
+        image: "/HomePage/decor.jpg",
+        tags: ["Commercial", "Restaurant"],
+        details: [
+            "Food-grade SS workstations",
+            "Modular kitchen layouts",
+            "Heat & corrosion-resistant surfaces",
+            "Hygienic & easy-to-clean designs",
+        ],
     },
     {
-        id: 5,
-        icon: Ruler,
-        title: 'Space Planning',
-        description: 'Optimize your space with intelligent layouts that maximize functionality and flow.',
-        features: ['Layout Design', '3D Visualization', 'Traffic Flow', 'Zoning Solutions']
+        id: "05",
+        title: "Architectural Gates & Grills",
+        description:
+            "Secure and elegant gates and grills defining premium entrances.",
+        image: "/HomePage/decor.jpg",
+        tags: ["Residential", "Security"],
+        details: [
+            "Laser-cut decorative gates",
+            "Manual & automated gate systems",
+            "Rust-proof outdoor coatings",
+            "High-security structural builds",
+        ],
     },
     {
-        id: 6,
-        icon: ShoppingBag,
-        title: 'Full-Service Projects',
-        description: 'End-to-end project management from concept to completion for a seamless experience.',
-        features: ['Project Management', 'Vendor Coordination', 'Installation', 'Final Styling']
-    }
+        id: "06",
+        title: "Decorative Art Installations",
+        description:
+            "Abstract steel art installations elevating modern spaces.",
+        image: "/HomePage/decor.jpg",
+        tags: ["Art", "Decor"],
+        details: [
+            "Custom geometric sculptures",
+            "Indoor & outdoor installations",
+            "Architect-led concept designs",
+            "Bold modern visual statements",
+        ],
+    },
 ];
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" },
+    },
+};
 
 export default function ServicesPage() {
     return (
-        <div className="min-h-screen bg-white pt-16">
+        <div className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="relative h-[350px] bg-gradient-to-r from-[#F4E4C1] to-white flex items-center justify-center">
-                <div className="text-center px-4 max-w-4xl mx-auto">
-                    <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                        Our <span className="text-[#C5A028]">Services</span>
-                    </h1>
-                    <p className="text-xl text-gray-700">
-                        Comprehensive design solutions tailored to bring your vision to life with excellence and creativity
-                    </p>
+            <section className="relative py-20 bg-[#F3EAD7] overflow-hidden">
+                {/* Background Pattern */}
+                <div className="absolute top-0 left-0 w-64 h-64 bg-white/40 rounded-full blur-[80px] -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/30 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <span className="text-[#D4AF37] font-medium tracking-wider uppercase text-sm mb-3 block">
+                            Our Expertise
+                        </span>
+                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                            Premium <span className="text-[#D4AF37] italic">Steel</span> Solutions
+                        </h1>
+                        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light">
+                            Comprehensive design solutions tailored to bring your vision to life with excellence and creativity.
+                        </p>
+                    </motion.div>
                 </div>
             </section>
 
             {/* Services Grid */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service) => {
-                        const IconComponent = service.icon;
-                        return (
-                            <div
-                                key={service.id}
-                                className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-[#C5A028] transition-all duration-300 hover:shadow-xl group"
-                            >
-                                <div className="w-16 h-16 bg-gradient-to-br from-[#F4E4C1] to-[#C5A028] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <IconComponent size={32} className="text-white" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    {services.map((service, index) => (
+                        <motion.div
+                            key={service.id}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            variants={itemVariants}
+                            className="group relative h-[420px] overflow-hidden border border-gray-100 rounded-none bg-gray-50"
+                        >
+                            {/* Image */}
+                            <Image
+                                src={service.image}
+                                alt={service.title}
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+
+                            {/* Dark Overlay */}
+                            <div className="absolute inset-0 bg-black/70 opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+
+                            {/* Front Content */}
+                            <div className="absolute bottom-0 p-6 text-white transition-all duration-500 group-hover:translate-y-[-110px]">
+                                <span className="text-3xl font-bold text-[#D4AF37]">
+                                    {service.id}
+                                </span>
+                                <h3 className="text-xl font-bold mt-1">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-700 mb-6 leading-relaxed">
+                                <p className="text-sm text-gray-300 mt-2 line-clamp-2">
                                     {service.description}
                                 </p>
-                                <ul className="space-y-2">
-                                    {service.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-center text-gray-600">
-                                            <span className="w-1.5 h-1.5 bg-[#C5A028] rounded-full mr-3"></span>
-                                            {feature}
+                                <ArrowUpRight className="mt-3 opacity-80" />
+                            </div>
+
+                            {/* Hover Details */}
+                            <div className="absolute bottom-0 w-full p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 text-white">
+                                <ul className="space-y-2 text-sm text-gray-200">
+                                    {service.details.map((item, i) => (
+                                        <li key={i} className="flex gap-2">
+                                            <span className="w-2 h-2 bg-[#D4AF37] rounded-full mt-2" />
+                                            {item}
                                         </li>
                                     ))}
                                 </ul>
+
+                                {/* Tags */}
+                                <div className="flex flex-wrap gap-2 mt-4">
+                                    {service.tags.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className="text-[10px] uppercase tracking-wider border border-[#D4AF37]/40 text-[#D4AF37] px-3 py-1 rounded-full"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
-                        );
-                    })}
+                        </motion.div>
+                    ))}
                 </div>
             </div>
 
             {/* CTA Section */}
-            <section className="bg-gradient-to-r from-[#C5A028] to-[#A08020] py-20">
-                <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="text-4xl font-bold text-white mb-6">
-                        Ready to Start Your Project?
-                    </h2>
-                    <p className="text-xl text-white/90 mb-8">
-                        Let's collaborate to create spaces that inspire and delight
-                    </p>
-                    <button className="bg-white text-[#C5A028] px-10 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors shadow-xl">
-                        Get a Free Consultation
-                    </button>
+            <section className="py-20 bg-[#0a0a0a] text-white relative overflow-hidden">
+                {/* Background Texture/Gradient */}
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-[#1a1a1a] via-[#0a0a0a] to-[#000000]" />
+                <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[#D4AF37]/10 blur-[120px] rounded-full pointer-events-none" />
+
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <div className="inline-block mb-6">
+                            <Sparkles size={40} className="text-[#D4AF37] mx-auto" />
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                            Ready to Start <span className="text-[#D4AF37] italic">Your Project?</span>
+                        </h2>
+                        <p className="text-lg md:text-xl text-gray-300 mb-8 font-light">
+                            Let's bring your vision to life with our expert team and premium solutions.
+                        </p>
+                        <Button className="bg-[#D4AF37] text-white hover:bg-[#B8941F] px-8 py-4 text-lg font-semibold transition-all">
+                            Get In Touch Today
+                        </Button>
+                    </motion.div>
                 </div>
             </section>
         </div>

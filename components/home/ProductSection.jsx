@@ -38,7 +38,7 @@ export default function ProductSection() {
                     <span className="text-[#D4AF37] font-medium tracking-wider uppercase text-sm mb-3 block">
                         Our Portfolio
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">
+                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                         Inspiration <span className="italic text-[#D4AF37]">Gallery</span>
                     </h2>
                     <p className="max-w-2xl mx-auto text-gray-600 font-light">

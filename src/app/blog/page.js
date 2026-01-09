@@ -1,6 +1,9 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const blogPosts = [
     {
@@ -61,55 +64,77 @@ const blogPosts = [
 
 export default function BlogPage() {
     return (
-        <div className="min-h-screen bg-white pt-16">
+        <div className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="relative h-[300px] bg-gradient-to-r from-[#F4E4C1] to-white flex items-center justify-center">
-                <div className="text-center px-4">
-                    <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Our Blog</h1>
-                    <p className="text-gray-700 max-w-2xl mx-auto">
-                        Expert insights, design inspiration, and tips for creating your perfect space
-                    </p>
+            <section className="relative py-20 bg-[#F3EAD7] overflow-hidden">
+                {/* Background Pattern */}
+                <div className="absolute top-0 left-0 w-64 h-64 bg-white/40 rounded-full blur-[80px] -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/30 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <span className="text-[#D4AF37] font-medium tracking-wider uppercase text-sm mb-3 block">
+                            Our Blog
+                        </span>
+                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                            Insights & <span className="text-[#D4AF37] italic">Inspiration</span>
+                        </h1>
+                        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light">
+                            Expert insights, design inspiration, and tips for creating your perfect space.
+                        </p>
+                    </motion.div>
                 </div>
             </section>
 
             {/* Blog Grid */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {blogPosts.map((post) => (
-                        <article key={post.id} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                            <div className="relative h-[240px] overflow-hidden">
+                    {blogPosts.map((post, index) => (
+                        <motion.article
+                            key={post.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="bg-white rounded-2xl overflow-hidden border border-gray-100 group cursor-pointer"
+                        >
+                            <div className="relative h-[260px] overflow-hidden">
                                 <Image
                                     src={post.image}
                                     alt={post.title}
                                     fill
-                                    className="object-cover hover:scale-105 transition-transform duration-300"
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute top-4 left-4">
-                                    <span className="bg-[#C5A028] text-white px-4 py-1 rounded-full text-sm font-medium">
+                                    <span className="bg-white/90 backdrop-blur-sm text-[#D4AF37] px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wide">
                                         {post.category}
                                     </span>
                                 </div>
                             </div>
-                            <div className="p-6">
-                                <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                            <div className="p-8">
+                                <div className="flex items-center gap-4 text-xs font-medium text-gray-400 mb-4 uppercase tracking-wider">
                                     <span>{post.date}</span>
                                     <span>•</span>
                                     <span>{post.author}</span>
                                 </div>
-                                <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-[#C5A028] transition-colors">
+                                <h2 className="text-xl font-bold text-gray-900 mb-4 line-clamp-2 group-hover:text-[#D4AF37] transition-colors">
                                     <Link href={`/blog/${post.id}`}>{post.title}</Link>
                                 </h2>
-                                <p className="text-gray-700 mb-4 line-clamp-3">
+                                <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed font-light">
                                     {post.excerpt}
                                 </p>
                                 <Link
                                     href={`/blog/${post.id}`}
-                                    className="inline-flex items-center text-[#C5A028] hover:text-[#A08020] font-semibold transition-colors"
+                                    className="inline-flex items-center text-[#D4AF37] hover:text-[#B8941F] font-semibold transition-colors group/link"
                                 >
-                                    Read More →
+                                    Read Article <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
                                 </Link>
                             </div>
-                        </article>
+                        </motion.article>
                     ))}
                 </div>
             </div>

@@ -21,7 +21,7 @@ export default function ContactSection() {
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                             Ready to Transform <br />
-                            <span className="font-serif italic text-[#D4AF37] font-light">Your Space?</span>
+                            <span className="italic text-[#D4AF37] font-light">Your Space?</span>
                         </h2>
                         <p className="text-gray-400 text-lg mb-8 max-w-lg">
                             From concept to installation, we bring your architectural vision to life with precision stainless steel craftsmanship.

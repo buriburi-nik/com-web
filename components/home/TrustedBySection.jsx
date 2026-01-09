@@ -44,7 +44,7 @@ export default function TrustedBySection() {
                     {[...partners, ...partners, ...partners].map((partner, index) => (
                         <div
                             key={index}
-                            className="mx-8 md:mx-12 text-2xl md:text-3xl font-serif text-gray-300 hover:text-[#D4AF37] transition-colors cursor-default whitespace-nowrap"
+                            className="mx-8 md:mx-12 text-2xl md:text-3xl text-gray-300 hover:text-[#D4AF37] transition-colors cursor-default whitespace-nowrap"
                         >
                             {partner}
                         </div>

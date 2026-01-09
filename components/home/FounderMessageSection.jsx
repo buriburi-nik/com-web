@@ -27,7 +27,7 @@ export default function FounderMessageSection() {
                     {/* Heading */}
                     <h2 className="text-2xl md:text-4xl font-bold mb-8 leading-tight">
                         Message From the Founder <br />
-                        <span className="text-[#D4AF37] font-serif italic mt-2 block text-2xl md:text-3xl">
+                        <span className="text-[#D4AF37] italic mt-2 block text-2xl md:text-3xl">
                             – Mr. Neeraj Sharma
                         </span>
                     </h2>
