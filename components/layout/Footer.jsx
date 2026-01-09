@@ -1,0 +1,67 @@
+
+import Link from 'next/link';
+
+export default function Footer() {
+    return (
+        <footer className="bg-gray-50 border-t border-gray-200">
+            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div className="col-span-1 md:col-span-2">
+                        <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-[#D4AF37] to-[#B8941F] bg-clip-text text-transparent">
+                            Decor
+                        </Link>
+                        <p className="mt-4 text-gray-900 max-w-md">
+                            Creating beautiful spaces for your dream home. Professional real estate services with premium quality.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">
+                            Company
+                        </h3>
+                        <ul className="mt-4 space-y-4">
+                            <li>
+                                <Link href="/about" className="text-base text-gray-600 hover:text-[#D4AF37] transition-colors">
+                                    About
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/services" className="text-base text-gray-900 hover:text-[#D4AF37] transition-colors">
+                                    Services
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/careers" className="text-base text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                                    Careers
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">
+                            Legal
+                        </h3>
+                        <ul className="mt-4 space-y-4">
+                            <li>
+                                <Link href="/privacy" className="text-base text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                                    Privacy Policy
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/terms" className="text-base text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                                    Terms of Service
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="mt-8 border-t border-gray-200 pt-8 text-center">
+                    <p className="text-base text-gray-900">
+                        &copy; {new Date().getFullYear()} Decor. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    );
+}
