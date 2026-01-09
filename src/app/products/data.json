@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "company": "Decor",
+        "image": "/HomePage/decor.jpg",
+        "description": "Modern kitchen with marble countertops and gold accents.",
+        "category": "Kitchen",
+        "title": "Marble & Gold Kitchen"
+    },
+    {
+        "id": 2,
+        "company": "Decor",
+        "image": "/HomePage/decor.jpg",
+        "description": "Minimalist bedroom with floor-to-ceiling windows.",
+        "category": "Bedroom",
+        "title": "Minimalist Bedroom"
+    },
+    {
+        "id": 3,
+        "company": "Decor",
+        "image": "/HomePage/decor.jpg",
+        "description": "Spacious living room with contemporary furniture.",
+        "category": "Furniture",
+        "title": "Contemporary Living"
+    },
+    {
+        "id": 4,
+        "company": "Decor",
+        "image": "/HomePage/decor.jpg",
+        "description": "Elegant lighting fixtures for a warm ambiance.",
+        "category": "Lighting",
+        "title": "Warm Ambience Lighting"
+    },
+    {
+        "id": 5,
+        "company": "Decor",
+        "image": "/HomePage/decor.jpg",
+        "description": "Luxury bathroom with freestanding tub.",
+        "category": "Bathware",
+        "title": "Luxury Bath Suite"
+    },
+    {
+        "id": 6,
+        "company": "Decor",
+        "image": "/HomePage/decor.jpg",
+        "description": "Textured wall finishes for unique interiors.",
+        "category": "Finishes",
+        "title": "Textured Wall Finish"
+    },
+    {
+        "id": 7,
+        "company": "Decor",
+        "image": "/HomePage/decor.jpg",
+        "description": "Outdoor patio decor for relaxation.",
+        "category": "Decor",
+        "title": "Outdoor Patio Oasis"
+    },
+    {
+        "id": 8,
+        "company": "Decor",
+        "image": "/HomePage/decor.jpg",
+        "description": "Modern workspace design for productivity.",
+        "category": "Furniture",
+        "title": "Productive Workspace"
+    },
+    {
+        "id": 9,
+        "company": "Decor",
+        "image": "/HomePage/decor.jpg",
+        "description": "Cozy reading corner with armchair.",
+        "category": "Bedroom",
+        "title": "Cozy Reading Corner"
+    }
+]

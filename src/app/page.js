@@ -1,21 +1,27 @@
-import dynamic from 'next/dynamic';
 import HeroSection from "../../components/home/HeroSection";
-
-const CategorySection = dynamic(() => import("../../components/home/CategorySection"), {
-  loading: () => <div className="h-96 w-full animate-pulse bg-gray-50" />
-});
-const StatsSection = dynamic(() => import("../../components/home/StatsSection"));
-const ServicesSection = dynamic(() => import("../../components/home/ServicesSection"));
-const FeaturedProperties = dynamic(() => import("../../components/home/FeaturedProperties"));
+import AboutSection from "../../components/home/AboutSection";
+import ProductSection from "../../components/home/ProductSection";
+import MarqueeSection from "../../components/home/MarqueeSection";
+import ServicesSection from "../../components/home/ServicesSection";
+import FounderMessageSection from "../../components/home/FounderMessageSection";
+import SocialProofSection from "../../components/home/SocialProofSection";
+import TrustedBySection from "../../components/home/TrustedBySection";
+import ContactSection from "../../components/home/ContactSection";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white overflow-hidden font-(family-name:--font-geist-sans)">
       <HeroSection />
-      <CategorySection />
-      <StatsSection />
+      <AboutSection />
+
+      <MarqueeSection />
+      <ProductSection />
+
       <ServicesSection />
-      <FeaturedProperties />
+      <TrustedBySection />
+      <FounderMessageSection />
+      <SocialProofSection />
+      <ContactSection />
     </main>
   );
 }

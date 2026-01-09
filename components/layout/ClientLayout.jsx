@@ -11,7 +11,9 @@ export default function ClientLayout({ children }) {
     return (
         <>
             <Header onOpenContactModal={() => setIsContactModalOpen(true)} />
-            {children}
+            <main className="pt-16">
+                {children}
+            </main>
             <Footer />
             <ContactFormModal
                 isOpen={isContactModalOpen}
